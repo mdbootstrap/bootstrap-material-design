@@ -39,7 +39,6 @@ All issues filed should be reduced to a [Snippets](https://mdbootstrap.com/snipp
 ### Development
 If you want to get involved, please do so by submitting pull requests.  
 If there isn't one, please file a new issue so we can discuss and assign the work so effort is not duplicated.  
-Thank you!
 
 ### Standard guidelines
 Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
