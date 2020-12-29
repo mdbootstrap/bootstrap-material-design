@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Twitter Bootstrap -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design for Bootstrap -->
-    <link href="dist/css/material-wfont.min.css" rel="stylesheet">
+    <link href="dist/css/roboto.min.css" rel="stylesheet">
+    <link href="dist/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="dist/css/ripples.min.css" rel="stylesheet">
 
     <!-- Dropdown.js -->
@@ -143,6 +144,7 @@
         <nav class="col-xs-3 menu">
           <ul>
             <li class="active withripple" data-target="#about">Material Design for Bootstrap</li>
+            <li class="withripple" data-target="#getting-started">Getting Started</li>
             <li><a href="http://fezvrasta.github.com/bootstrap-material-design/bootstrap-elements.html" target="_blank">Bootstrap elements <i class="mdi-action-open-in-new"></i></a></li>
             <li class="withripple" data-target="#material-colors">Material Colors</li>
             <li class="withripple" data-target="#checkbox">Checkbox</li>
@@ -173,22 +175,159 @@
               <br>
               <p>If you want support the development of this project please consider donate something:</p>
               <a href="https://www.gratipay.com/FezVrasta/" target="_blank" class="btn btn-primary">Donate with Gratipay</a>
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: inline-block;">
+              <form action="https://www.paypal.com/cgi-bin/webscr" id="paypal" method="post" target="_blank" style="display: inline-block;">
                 <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="ZLAZFNZVV5QL6">
-                <input type="submit" class="btn btn-primary" value="Donate with PayPal" name="submit">
+                <div class="btn btn-primary">
+                  <select name="hosted_button_id" title="I can't accept less than 5 euro due to accounting troubles">
+                    <option value="DAAK965W2DKYE">&euro; 5,00</option>
+                    <option value="28PH77JK5QWFE">&euro; 10,00</option>
+                    <option value="6B6TJAJ2R99HS">&euro; 15,00</option>
+                    <option value="GJCEKCQFMBVHA">&euro; 20,00</option>
+                    <option value="U7QXM95C8RJ9W">&euro; 25,00</option>
+                    <option value="55S3VBB3U4NAS">&euro; 50,00</option>
+                  </select>
+                  <input type="submit" value="DONATE WITH PAYPAL" name="submit">
+                </div>
               </form>
+              <style>
+                #paypal .btn { padding: 5px 30px 6px 30px; }
+                #paypal input { background: transparent; border: 0; }
+              </style>
               <p>Thanks to all the people that donate me weekly on Gratipay and all the ones which has donated on PayPal! You are great guys!</p>
 
               <br>
               <p>Would you like to use this theme for commercial projects? Visit <a href="http://www.mywebexpression.com">MyWebExpression</a> and contact me using the form on the bottom of the page. Thanks!</p>
 
               <br>
+              <div class="cbwrapper">
+                <script async
+                        type="text/javascript"
+                        src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=fezvrastagithubiobootstrapmateri"
+                        id="_carbonads_js">
+                </script>
+                <div id="fakecb">Seems like you are using AdBlock to hide banners... Carbon ADS are quite nice and don't take much space, you may consider disabling it on this website.<br>This is the only AD on the entire website.<br><br>Thanks!</div>
+              </div>
+              <style>
+                .cbwrapper div {
+                  display: none;
+                }
+                .cbwrapper div:nth-child(2) {
+                  display: block;
+                }
+                #carbonads, #fakecb {
+                  border: 1px solid #d5d5d5;
+                  font-size: 11px;
+                  line-height: 15px;
+                  overflow: hidden;
+                  width: 340px;
+                  padding: 20px;
+                  margin: auto;
+                  height: 142px;
+                  border-radius: 2px;
+                }
+                #carbonads .carbon-img {
+                  float: left;
+                  display: block;
+                }
+                #carbonads .carbon-text, #carbonads .carbon-poweredby {
+                  float: left;
+                  width: 150px;
+                  padding: 0 10px 10px 10px;
+                }
+                #carbonads .carbon-text:hover, #carbonads .carbon-poweredby:hover {
+                  text-decoration: none;
+                }
+                #carbonads .carbon-poweredby {
+                  color: #9D9D9D;
+                }
+              </style>
+
               <br>
               <p>You can get this theme downloading the source from Bower:</p>
               <pre><code>bower install bootstrap-material-design</code></pre>
 
 
+            </div>
+            <div class="well page" id="getting-started">
+              <h1 class="header">Getting Started</h1>
+              <h3>Download</h3>
+              <hr>
+              <h4>Install with NPM - Coming Soon</h4>
+              <p>You can also install and manage Material Bootstrap using NPM</p>
+              <pre><code>npm install</code></pre>
+              <h4>Install with Bower</h4>
+              <p>You can also install and manage Material Bootstrap using Bower</p>
+              <pre><code>bower install bootstrap-material-design</code></pre>
+              <h4>Install with Meteor</h4>
+              <p>You can also install and manage Material Bootstrap using Meteor</p>
+              <pre><code>meteor add fezvrasta:bootstrap-material-design</code></pre>
+              <br />
+              <h3>What's included</h3>
+              <hr>
+              <p>Material Bootstrap is downloadable in a two forms. Material.css only supports the primary shades of the material color palette and Material-fullpalette.css supports every shade of the material color palette</p>
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Required Frameworks</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="list-group">
+                    <div class="list-group-item">
+                      <div class="row-action-primary">
+                        <i class="mdi-action-settings"></i>
+                      </div>
+                      <div class="row-content">
+                        <h4 class="list-group-item-heading">Bootstrap v3.0+</h4>
+                        <p class="list-group-item-text">This theme extends, styles, and modifies Bootstrap's elements and styles. Without Bootstrap this project will not display correctly. To install Bootstrap please go to <a href="http://getbootstrap.com/getting-started/" alt="Bootstrap Docs">Get Bootstrap</a></p>
+                      </div>
+                    </div>
+                    <div class="list-group-separator"></div>
+                    <div class="list-group-item">
+                      <div class="row-action-primary">
+                        <i class="mdi-action-settings"></i>
+                      </div>
+                      <div class="row-content">
+                        <h4 class="list-group-item-heading">jQuery 1.9.1+</h4>
+                        <p class="list-group-item-text">All JavaScript plugins require jQuery to be included.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Material Bootstrap. You'll see something like this:</p>
+              <!-- This code must be aligned this way to render correctly -->
+              <pre><code class="language-bash" data-lang="bash">Material/
+├── css/
+│   ├── material.css
+│   ├── material.css.map
+│   ├── material.min.css
+│   ├── material.min.css.map
+│   ├── material-wfont.css
+│   ├── material-wfont.css.map
+│   ├── material-wfont.min.css
+│   ├── material-wfont.min.css.map
+│   ├── ripples
+│   ├── ripples.css.map
+│   ├── ripples.min.css
+│   ├── ripples.min.css.map
+├── js/
+│   ├── material.js
+│   ├── material.min.js
+│   ├── material.min.js.map
+│   ├── ripples.js
+│   ├── ripples.min.js
+│   ├── ripples.min.js.map
+└── fonts/
+    ├── Material-Design-Icons.eot
+    ├── Material-Design-Icons.svg
+    ├── Material-Design-Icons.ttf
+    ├── Material-Design-Icons.woff
+    └── ADD REMAINING GOOGLE FONT FILES HERE
+                </code>
+              </pre>
+              <p>Just copy the compiled CSS and JS files and the font files from the .zip and add them to your site.</p>
+              <br />
+              <p>Once copied you need to initialize the material javascript by adding the following javascript to your site,</p>
+              <pre><code>$.material.init()</code></pre>
             </div>
             <div class="well page" id="checkbox">
               <h1 class="header">Checkbox</h1>
@@ -277,12 +416,15 @@
                   font-weight: 400;
                 }
 
-                #checkbox .sample2 .text {
+                #checkbox .sample2 {
                   padding: 10px 0;
+                }
+                #checkbox .sample2 .text {
                   display: inline-block;
                 }
                 #checkbox .sample2 .checkbox {
                   float: right;
+                  margin: 0;
                 }
               </style>
             </div>
@@ -361,6 +503,20 @@
                 </label>
               </div>
 
+              <h1 class="header">Toggle Button Variations</h1>
+              <div class="togglebutton togglebutton-material-pink">
+                <label>
+                  Wi-Fi
+                  <input type="checkbox" checked>
+                </label>
+              </div>
+              <div class="togglebutton togglebutton-material-deep-orange">
+                <label>
+                  Bluetooth
+                  <input type="checkbox" checked>
+                </label>
+              </div>
+
               <style>
                 #toggle-button h2 {
                   font-size: 18.7199993133545px;
@@ -392,13 +548,17 @@
                 <input type="email" class="form-control floating-label" placeholder="email">
                 <input type="number" class="form-control floating-label" placeholder="number">
 
+                <h2>Disabled</h2>
+                <input disabled type="text" class="form-control floating-label" placeholder="email">
+                <input disabled type="text" class="form-control floating-label" placeholder="number">
+
                 <h2>Hints</h2>
                 <input type="text" class="form-control floating-label" data-hint="Write here something cool" placeholder="label">
                 <input type="email" class="form-control floating-label" data-hint="A valid email should contain an @ symbol" placeholder="label">
 
 
                 <h2>Styling</h2>
-                <div class="form-group has-success">
+                <div class="form-group has-error">
                   <input type="text" class="form-control form-control-success" placeholder="label">
                   <input type="text" class="form-control form-control-success floating-label" placeholder="floating label">
                 </div>
@@ -706,12 +866,11 @@
             </div>
             <div class="well page" id="material-colors">
               <h1 class="header">Material Color Samples</h1>
-              <p>This is the list of all the supported color variations. Each color can be applied to every element that supports variations.
-              </p>
-              <pre><code>.btn-material-{{color}}
-              .navbar-material-{{color}}
-              .well-material-{{color}}
-              etc...</code></pre>
+              <p>This is the list of all the supported color variations. Each color can be applied to every element that supports variations.</p>
+
+              <pre>.btn-material-{{color}}<br>.navbar-material-{{color}}<br>.well-material-{{color}}<br>etc...</pre>
+
+              <p><b>material.css</b> includes only the primary color shades (red, pink, purple, deep-purple, etc...), if you want the entire palette please use <b>material-fullpalette.css</b></p>
               <div class="sampleOthers">
                 <button class="btn btn-black btn-lg">Black</button>
                 <button class="btn btn-white btn-lg">White</button>
@@ -1137,11 +1296,14 @@
                   <option value="Sfogliatelle">Sfogliatelle</option>
                 </select>
 
+                <br>
 
                 <select class="form-control" disabled placeholder="Your favorite pastry">
                   <option value="disabled">Disabled</option>
                 </select>
               </div>
+              <br>
+              <p>Dropdowns provided by <a href="https://github.com/FezVrasta/dropdown.js" target="_blank">Dropdown.js</a></p>
 
             </div>
             <div class="well page" id="dialog">
@@ -1366,7 +1528,7 @@
     </script>
 
     <!-- Twitter Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <!-- Material Design for Bootstrap -->
     <script src="dist/js/material.min.js"></script>
