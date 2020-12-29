@@ -1,64 +1,126 @@
-<p align=center>
-<a href="https://mdbootstrap.com/docs/standard/">
-  <img src="https://mdbootstrap.com/img/Marketing/general/logo/medium/mdb-r.png">
-</a>
-</p>
-<h1 align=center>Material Design for Bootstrap</h1>
+[![banner](demo/imgs/banner.jpg)](#)
 
-Material Design for Bootstrap is the best way to use [Material Design guidelines by Google](https://material.io/design/introduction/)
-in your Bootstrap 4 based application.
-Since this is a fully customizable version of Bootstrap, just include Material Design for Bootstrap CSS instead of Bootstrap CSS, and include the JavaScript at
-the end of your document (just before the `</body>` tag), and everything will be converted to Material Design.
+This Bootstrap theme is an easy way to use the new Material Design guidelines by Google in your Bootstrap 3 based application.
+Just include the theme right after the Bootstrap CSS and include the javascript at the end of your document, everything will be converted to Material Design (paper) style.
 
-<h2 align=center>The latest Bootstrap 5 & Material Design 2.0 </h2>
+This theme is in early development and is not ready for production.
 
-<a href="https://mdbootstrap.com/docs/standard/"><img src="https://mdbootstrap.com/wp-content/uploads/2020/11/BanerFree.png"></a>
+Check out [the demo at this link](http://fezvrasta.github.io/bootstrap-material-design/) (could be not even with the master branch).
 
-## Documentation
+## How to install
 
-- [Getting Started](https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/getting-started/introduction/)
-- [Building](https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/getting-started/build-tools/)
-- [Material Design components](https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/material-design/buttons/)
-- [Bootstrap default rendering reference documentation](https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/components/alerts/)
-- [Migration](https://mdbootstrap.github.io/bootstrap-material-design/docs/4.0/migration/)
+    BOWER:       bower install bootstrap-material-design --save
+    GEMS:        gem install bootstrap-material-design
 
-## Education
+### LESS & SASS
 
-Tutorials for those with insatiable appetite for knowledge made by us & our users can be found in our [education section](https://mdbootstrap.com/docs/standard/getting-started/) & in [miscellaneous](https://mdbootstrap.com/articles/)
+We decided to merge the SASS fork in to the main repository instead of having two seperate ones, [#40](https://github.com/FezVrasta/bootstrap-material-design/issues/40). The default grunt
+task will compile the LESS source. To use the SASS base use the SCSS task ```grunt scss```.
 
-## Support
+**NB** The LESS and SASS bases should reflect each other, right now this project is unstable and under heavy development
+so this might not be true before the first stable release.
 
-The things to do are a lot and the time is little, if you are a passionate developer
-with experience with Bootstrap and Material Design for Bootstrap and you have some spare
-time, please consider becoming a contributor of this project!  
+## Getting started
 
-If you like this project you may support it by, starring this repository or reporting issues.  
-All issues filed should be reduced to a [Snippets](https://mdbootstrap.com/snippets/) test case where possible.
+Navigate to the `template/` folder in this repository, and you will see the `index.html` file, which has the CSS include statements, in the `head` section and the JS includes just before `body` section closes.
+You need to copy the `material/` folder to the root of your project, ensuring that all the files in your project can access the files through the relative URL, supplied in the CSS and the JS includes.
 
+## Todo
 
-### Development
-If you want to get involved, please do so by submitting pull requests.  
-If there isn't one, please file a new issue so we can discuss and assign the work so effort is not duplicated.  
+- Morphing icons
+- [Icons/grids/chips to card/fullscreen transitions](http://www.polymer-project.org/components/core-animated-pages/demo.html)
+- [Headers](http://www.polymer-project.org/components/core-header-panel/demo.html)
+- [Icon button](http://www.polymer-project.org/components/paper-icon-button/demo.html)
+- [Tabs](http://www.polymer-project.org/components/paper-tabs/demo.html)
+- [Toggle buttons](http://www.polymer-project.org/components/paper-toggle-button/demo.html)
 
-### Standard guidelines
-Please read through our [contributing guidelines](CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+I'll try to write every component without the need of Javascript but just CSS, and use JS only if strictly needed.
+More "todo" things can be found in the ISSUES of this repository.
 
-Moreover, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the [Code Guide](http://codeguide.co/), maintained by [Mark Otto](https://github.com/mdo), one of Bootstrap's founders.
+# Support me
 
+If you like this project you may support me by donating something on Gittip, starring this repository or reporting bugs and ideas in the issue section.
 
-## Versioning
+[![gittip](screenshots/gittip-button.jpg)](https://www.gratipay.com/FezVrasta/)
+[![issues](screenshots/issues-button.jpg)](https://github.com/FezVrasta/bootstrap-material-design/issues)
 
-For transparency into our release cycle and in striving to maintain backward compatibility, this project is maintained under
-[the Semantic Versioning guidelines](https://semver.org/). Sometimes we screw up, but we'll adhere to those rules whenever possible.
+# Contribute
 
-See [the Releases section of our GitHub project](https://github.com/mdbootstrap/bootstrap-material-design/releases) for changelogs
-of each release version.
+Please see the [contrib](CONTRIBUTING.md) file.
 
 
-## Useful resources
+# Documentation
 
-Here you'll find more useful resources, like [Getting Started](https://mdbootstrap.com/docs/standard/getting-started/quick-start/), [CLI Hosting](https://mdbootstrap.com/docs/standard/cli/), [Premium Templates](https://mdbootstrap.com/docs/standard/templates/trending/) & [Snippet Editor](https://mdbootstrap.com/snippets/)
+Material Design for Bootstrap provides some additional stuff to get the best from Material Design.
+
+### Variations:
+
+There are 17 additional color variations (in addition to the classic 4 variations) for buttons, inputs, checkboxes, radios, alerts, navbars, tabs, labels, paginations, progress bars and more.
+They can be used by adding the class suffix `-material-color` to the desired element and replacing `color` with the desired one.
+
+Example:
+
+    <button class="btn btn-material-deeppurple">Deep purple button</button>
+
+These colors are taken from the Material Design color palette and are reported below:
+
+![palette](screenshots/palette.jpg)
+
+### Buttons:
+
+Add `.btn-flat` to a button to make it flat, without shadows.
+Add `.btn-raised` to a button to add a permanent shadow to it.
+
+### Inputs:
+
+Add `.floating-label` to an input field with a `placeholder` to transform the placeholder in a floating label.
+
+Remember to use the proper HTML markup to get radio and checkboxes styled correctly (choose between *radio* or *checkbox*):
+
+    <div class="radio/checkbox radio-primary">
+        <label>
+            <input type="radio/checkbox" checked>
+            Option one is this
+        </label>
+    </div>
+
+### Icons:
+
+Material Design for Bootstrap includes 490 original Material Design icons!
+These icons are extracted from the original Google sources and are licensed under the BSD license.
+They are provided as an iconic and easy to use font.
+
+Variations are available for every icon, including the original Bootstrap icons.
+
+The syntax to add a Material icon is:
+
+     <i class="icon icon-material-favorite"></i>
+
+# Plugins
+
+Material Design for Bootstrap comes with styling support for various external scripts:
+
+### SnackbarJS
+
+Create snackbars and toasts with [SnackbarJS plugin](https://github.com/FezVrasta/snackbarjs). The default toast style is the squared one (snackbar style). If you like to use the rounded style (toast style), please add the `toast` class to the `style` option of SnackbarJS.
+
+### RipplesJS
+
+This is part of Material Design for Bootstrap project and is a plain Javascript script which creates the ripple effect on click of the defined elements.
+At the moment RipplesJS does not have its own repository but it will probably have one in the future.
+
+### noUiSlider
+
+Make cross-browser sliders and get them styled with Material Design thanks to the support provided by this theme.
+Read more about [noUiSlider here](http://refreshless.com/nouislider/)
+
+### Selectize.js
+
+Transform select and multi select inputs in advanced text inputs. Material Design for BS provides a fulle replacement of the plugin's CSS, don't include it so.
+Read more about [selectize.js](http://brianreavis.github.io/selectize.js/)
 
 
-## License
-[MIT License](LICENSE.md)
+# Compatibility
+
+Currently Material Design for Bootstrap supports Google Chrome (tested v37+), Mozilla Firefox (tested 30+), and Internet Explorer (tested 11+). Mobile browsers are not currently tested but it may work.
+
