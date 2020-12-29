@@ -12,7 +12,9 @@
   background-color: transparent;
   border: 0;
   outline: 0;
-  transition: box-shadow 0.2s $bmd-animation-curve-fast-out-linear-in, background-color 0.2s $bmd-animation-curve-default, color 0.2s $bmd-animation-curve-default;
+  transition: box-shadow 0.2s $bmd-animation-curve-fast-out-linear-in,
+    background-color 0.2s $bmd-animation-curve-default,
+    color 0.2s $bmd-animation-curve-default;
   will-change: box-shadow, transform;
 
   @include undo-bs-tab-focus();
@@ -53,7 +55,6 @@
   // btn-raised
   &.btn-raised,
   .btn-group-raised & {
-
     // baseline shadow
     @include box-shadow($bmd-shadow-2dp);
 
@@ -94,7 +95,10 @@
       left: 50%;
       width: $bmd-btn-fab-font-size;
       line-height: $bmd-btn-fab-font-size;
-      transform: translate(-($bmd-btn-fab-font-size / 2), -($bmd-btn-fab-font-size / 2));
+      transform: translate(
+        -($bmd-btn-fab-font-size / 2),
+        -($bmd-btn-fab-font-size / 2)
+      );
     }
   }
 
@@ -132,6 +136,7 @@
     height: $bmd-btn-icon-size;
     margin: 0;
     color: inherit;
+    line-height: 0;
 
     &.bmd-btn-icon-sm,
     .btn-group-sm & {
@@ -141,13 +146,14 @@
       font-size: $bmd-btn-icon-font-size-sm;
 
       .material-icons {
-        //$position: ($bmd-btn-icon-size-sm - $bmd-btn-icon-font-size-sm) / 2;
-        //top: $position;
-        //left: $position;
         width: $bmd-btn-icon-font-size-sm;
         font-size: $bmd-btn-icon-font-size-sm;
         line-height: 1;
-        transform: translate(-($bmd-btn-icon-font-size-sm / 2), -($bmd-btn-icon-font-size-sm / 2));
+        vertical-align: middle;
+        transform: translate(
+          -($bmd-btn-icon-font-size-sm / 2),
+          -($bmd-btn-icon-font-size-sm / 2)
+        );
       }
     }
   }
@@ -155,20 +161,22 @@
   // Align icons inside buttons with text
   .material-icons {
     position: relative;
+    display: inline-block;
     top: .25em;
     margin-top: -1em;
     margin-bottom: -1em;
     font-size: 1.5em;
+    vertical-align: middle;
   }
 
   // Size variations
   &.btn-lg,
   .btn-group-lg & {
-    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $bmd-btn-font-size-lg, $btn-border-radius-lg);
+    @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $bmd-btn-font-size-lg, $line-height-lg, $btn-border-radius-lg);
   }
   &.btn-sm,
   .btn-group-sm & {
-    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $bmd-btn-font-size-sm, $btn-border-radius-sm);
+    @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $bmd-btn-font-size-sm, $line-height-sm, $btn-border-radius-sm);
     font-size: $bmd-btn-font-size-sm;
   }
 }
@@ -197,7 +205,6 @@
 // btn-group variations
 .btn-group,
 .btn-group-vertical {
-
   position: relative;
   margin: 10px 1px;
 

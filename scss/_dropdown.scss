@@ -13,12 +13,26 @@
   transform-origin: 100% 0;
 }
 
+@mixin menu-top-left {
+  top: auto;
+  left: 0;
+  bottom: 100%;
+  transform-origin: 0 100%;
+}
+
+@mixin menu-top-right {
+  right: 0;
+  left: auto;
+  transform-origin: 100% 100%;
+}
+
 .dropdown-menu {
   display: block; // utilize transition transform instead of flipping display
   padding: .25rem 0;
   border: 0;
   opacity: 0;
-  transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default, opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
+  transition: transform $bmd-menu-expand-duration $bmd-animation-curve-default,
+    opacity $bmd-menu-fade-duration $bmd-animation-curve-default;
   transform: scale(0);
   transform-origin: 0 0;
   will-change: transform;
@@ -27,7 +41,8 @@
     padding: .5rem 0;
   }
 
-  .open > & {
+  .open > &,
+  &.show {
     //z-index: 999;
     opacity: 1;
     transform: scale(1);
@@ -45,19 +60,16 @@
     @include menu-bottom-right();
   }
 
-  //&.dropdown-menu-top-left {
-  //  top: auto;
-  //  bottom: 0;  // needs to be overridden with the toggle-button height, see bmd-btn-icon above
-  //  transform-origin: 0 100%;
-  //}
-  //
-  //&.dropdown-menu-top-right {
-  //  top: auto;
-  //  right: 0;
-  //  bottom: 0;  // needs to be overridden with the toggle-button height, see bmd-btn-icon above
-  //  left: auto;
-  //  transform-origin: 100% 100%;
-  //}
+  .dropup > & {
+    @include menu-top-right();
+
+    &.dropdown-menu-left {
+      @include menu-top-left();
+    }
+    &.dropdown-menu-right {
+      @include menu-top-right();
+    }
+  }
 
   // https://www.google.com/design/spec/components/menus.html#menus-specs
   .dropdown-item {
@@ -72,14 +84,14 @@
     max-width: $bmd-menu-item-max-width;
     min-height: $bmd-menu-item-min-height;
 
-    padding: $bmd-menu-item-padding-top $bmd-menu-item-padding-right $bmd-menu-item-padding-bottom $bmd-menu-item-padding-left;
+    padding: $bmd-menu-item-padding-top $bmd-menu-item-padding-right
+      $bmd-menu-item-padding-bottom $bmd-menu-item-padding-left;
 
     // FIXME: multi-line menu word wrapping doesn't work - see the maximum width example in menus.md
     overflow: hidden;
     line-height: $bmd-menu-line-height;
     text-overflow: ellipsis;
     word-wrap: break-word;
-
 
     // Simple menus always maintain a 16dp margin (phone) or 24dp margin (tablet) to the left and right edges of the screen.
     @include media-breakpoint-up(md) {
@@ -89,10 +101,8 @@
   }
 }
 
-
 // this could be in a .btn-group or .dropdown
 .dropdown-toggle {
-
   &.bmd-btn-icon,
   &.bmd-btn-fab {
     // remove the dropdown icon

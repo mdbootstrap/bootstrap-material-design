@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-material-design",
-  "description": "Bootstrap Material Design 4",
+  "description": "Material Design for Bootstrap 4",
   "keywords": [
     "material",
     "design",
@@ -19,11 +19,11 @@
   "moduleType": "globals",
   "main": [
     "scss/_core.scss",
-    "dist/bootstrap-material-design.iife.js"
+    "dist/js/bootstrap-material-design.js"
   ],
   "dependencies": {
     "jquery": "^2.2",
-    "tether": "^1.2",
+    "popper.js": "^1.10.11",
     "bootstrap": "v4-dev"
   }
 }

@@ -64,7 +64,6 @@
   $focus-border: $bmd-btn-focus-bg,
   $active-border: $bmd-btn-active-bg
 ) {
-
   $background: $bmd-btn-bg;
   $focus-background: $bmd-btn-focus-bg;
   $active-background: $bmd-btn-active-bg;
@@ -101,7 +100,6 @@
 }
 
 @mixin bmd-flat-button-color() {
-
   @include bmd-flat-button-variant($bmd-btn-color);
 
   // flat bg with text color variations
@@ -163,9 +161,12 @@
 }
 
 @mixin bmd-raised-button-variant($color, $background, $border) {
-
   // FIXME: SPEC - this should be the 600 color, how can we get that programmatically if at all? Or are we limited to the color palette only?
-  $focus-background: contrast-color($background, darken($background, 4%), lighten($background, 4%));
+  $focus-background: contrast-color(
+    $background,
+    darken($background, 4%),
+    lighten($background, 4%)
+  );
   //$focus-background: darken($background, 10%);  // default bootstrap
   $focus-border: darken($border, 12%);
 
@@ -183,24 +184,23 @@
 }
 
 @mixin bmd-raised-button-color() {
-
   &.btn-primary {
-    @include bmd-raised-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+    @include bmd-raised-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border-color);
   }
   &.btn-secondary {
-    @include bmd-raised-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+    @include bmd-raised-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border-color);
   }
   &.btn-info {
-    @include bmd-raised-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+    @include bmd-raised-button-variant($btn-info-color, $btn-info-bg, $btn-info-border-color);
   }
   &.btn-success {
-    @include bmd-raised-button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+    @include bmd-raised-button-variant($btn-success-color, $btn-success-bg, $btn-success-border-color);
   }
   &.btn-warning {
-    @include bmd-raised-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+    @include bmd-raised-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border-color);
   }
   &.btn-danger {
-    @include bmd-raised-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+    @include bmd-raised-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border-color);
   }
 }
 
