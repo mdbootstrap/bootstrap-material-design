@@ -4,8 +4,22 @@ import babel from 'rollup-plugin-babel';
 const babelOptions = JSON.parse(fs.readFileSync('./.babelrc'));
 
 export default {
-  format: 'iife',
+  output: {
+    format: 'umd',
+  },
+  globals: {
+    jquery: 'jQuery',
+    'popper.js': 'Popper'
+  },
   plugins: [
-    babel(Object.assign(babelOptions, { babelrc: false })),
+    babel({
+      exclude: 'node_modules/**', // Only transpile our source code
+      externalHelpersWhitelist: [ // Include only required helpers
+        'defineProperties',
+        'createClass',
+        'inheritsLoose',
+        'extends'
+      ]
+    })
   ],
 };

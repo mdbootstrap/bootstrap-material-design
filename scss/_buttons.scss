@@ -17,8 +17,6 @@
     color 0.2s $bmd-animation-curve-default;
   will-change: box-shadow, transform;
 
-  @include undo-bs-tab-focus();
-
   //--
   // Colors
 
@@ -48,6 +46,12 @@
       z-index: 1; // add to the z-index so that the expanded shadow is above anything below it i.e. another button
       @include box-shadow($bmd-shadow-focus);
       //border: 1px solid $green;
+    }
+
+    // :focus - Avoid outline/boxShadow on buttons after mouseup
+    &.focus,
+    &:focus {
+      outline: 0; // disable outline
     }
   }
 
@@ -80,13 +84,14 @@
   &.bmd-btn-icon {
     overflow: hidden;
     font-size: $bmd-btn-fab-font-size;
-    line-height: normal;
+    line-height: 0;
 
     .btn-group-lg &,
     .btn-group-sm &,
     & {
       padding: 0; // need specificity
       border-radius: 50%;
+      line-height: 0;
     }
 
     .material-icons {

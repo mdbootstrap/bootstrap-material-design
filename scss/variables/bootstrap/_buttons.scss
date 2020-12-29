@@ -6,7 +6,7 @@ $bmd-btn-margin-bottom: .3125rem !default; // 5px
 
 // default btn with no specific type designation
 $bmd-btn-color: $gray-dark !default;
-$bmd-btn-bg: inherit !default; //$body-bg !default; // #fff
+$bmd-btn-bg: transparent !default; //$body-bg !default; // #fff
 $bmd-btn-border: #ccc !default;
 
 $bmd-btn-focus-bg: rgba(#999, .20) !default; // spec: bg Hover: 20% #999999
@@ -16,6 +16,8 @@ $bmd-btn-disabled: rgba($black, .26) !default; // spec: light theme: Disabled te
 $bmd-inverse-btn-focus-bg: rgba(#ccc, .15) !default; // spec: dark bg Hover: 15% #CCCCCC
 $bmd-inverse-btn-active-bg: rgba(#ccc, .25) !default; // spec: dark Pressed: 25% #CCCCCC
 $bmd-inverse-btn-disabled: rgba($white, .30) !default; // spec: dark theme: Disabled text: 30% $white
+
+$btn-focus-box-shadow: none;
 
 $bmd-btn-fab-size: 3.5rem !default; // 56px
 $bmd-btn-fab-size-sm: 2.5rem !default; // 40px
@@ -38,7 +40,7 @@ $btn-active-box-shadow:          none !default; // inset 0 3px 5px rgba(0,0,0,.1
 
 //
 $btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 theme-color(primary) !default;
 $btn-primary-border-color:             $btn-primary-bg !default;
 //
 $btn-secondary-color:            $gray-dark !default;
@@ -46,19 +48,19 @@ $btn-secondary-bg:               $body-bg !default; // #fff
 $btn-secondary-border-color:           #ccc !default;
 //
 $btn-info-color:                 #fff !default;
-$btn-info-bg:                    $brand-info !default;
+$btn-info-bg:                    theme-color(info) !default;
 $btn-info-border-color:                $btn-info-bg !default;
 //
 $btn-success-color:              #fff !default;
-$btn-success-bg:                 $brand-success !default;
+$btn-success-bg:                 theme-color(success) !default;
 $btn-success-border-color:             $btn-success-bg !default;
 //
 $btn-warning-color:              #fff !default;
-$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-bg:                 theme-color(warning) !default;
 $btn-warning-border-color:             $btn-warning-bg !default;
 //
 $btn-danger-color:               #fff !default;
-$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-bg:                  theme-color(danger) !default;
 $btn-danger-border-color:              $btn-danger-bg !default;
 //
 $btn-link-disabled-color:        $gray-light !default;
