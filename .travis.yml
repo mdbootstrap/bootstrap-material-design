@@ -1,22 +1,29 @@
+sudo: false
+git:
+  depth: 10
+
+# remove the dist branch and dist tags from travis builds
+branches:
+  except:
+    - dist
+    - /^v(\d+\.)?(\d+\.)?(\*|\d+)$/
+
 language: node_js
+node_js:
+  - "5" # "node" (v6.x) yielded v8::ObjectTemplate::Set() with non-primitive values is deprecated
 
-node_js: 0.10.33
+# enable this once we have reliable builds
+cache:
+  directories:
+    - node_modules
+    - vendor/bundle
 
-sudo: false # use new container infrastructure
-
-# sass setup
-cache: bundler # speeds up bundler
-rvm:
-  - 2.2.2
+before_install:
+  - rvm install 2.2
+  - rvm use 2.2 --fuzzy
+  - gem install scss-lint
 
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
-  #- export DISPLAY=:99.0
-  #- sh -e /etc/init.d/xvfb start
-  # Install meteor
-  #- curl https://install.meteor.com | /bin/sh
-  # Install spacejam, Meteor's CI helper
-  #- npm install -g spacejam
+  - npm install -g gulp-cli
 
-script: bower install && bundle install && grunt
+script: gulp all
