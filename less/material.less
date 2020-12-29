@@ -15,13 +15,16 @@ body {
 
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 
 h5, h6{
-  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+}
+
+a, a:hover, a:focus {
+  color: @primary;
 }
 
 // Well and Jumbotrons
@@ -106,18 +109,12 @@ legend {
 
 @import "_panels.less";
 
-.modal {
-  background: rgba(0,0,0,0.3);
-}
-
 // Prevent highlight on mobile
 * {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
   &:focus {
-        outline: 0;
-        border:none;
-        color: rgba(0, 0, 0, 0);
+    outline: 0;
   }
 }
 

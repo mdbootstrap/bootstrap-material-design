@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Material Design for Bootstrap</title>
 
@@ -131,6 +132,10 @@
 
     </style>
 
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
   </head>
   <body>
 
@@ -164,6 +169,8 @@
             <li class="withripple" data-target="#floating-action-button">Floating Action Button</li>
             <li class="withripple" data-target="#dropdown">Dropdown (Work in progress)</li>
             <li class="withripple" data-target="#dropdown-menu">Dropdown Menu</li>
+            <li class="withripple" data-target="#dialog">Dialog</li>
+            <li class="withripple" data-target="#shadow">Shadow</li>
           </ul>
         </nav>
         <div class="pages col-xs-9">
@@ -182,6 +189,10 @@
                 <input type="hidden" name="hosted_button_id" value="ZLAZFNZVV5QL6">
                 <input type="submit" class="btn btn-primary" value="Donate with PayPal" name="submit">
               </form>
+              <p>Thanks to all the people that donate me weekly on Gratipay and all the ones which has donated on PayPal! You are great guys!</p>
+
+              <br>
+              <p>Would you like to use this theme for commercial projects? Visit <a href="http://www.mywebexpression.com">MyWebExpression</a> and contact me using the form on the bottom of the page. Thanks!</p>
 
               <br>
               <br>
@@ -774,6 +785,131 @@
               </div>
 
             </div>
+            <div class="well page" id="dialog">
+              <h1 class="header">Dialog</h1>
+
+              <h2>Simple Dialog</h2>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#simple-dialog">Open dialog</button>
+
+              <h2>Dialog with header and footer</h2>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#complete-dialog">Open dialog</button>
+
+              <div id="simple-dialog" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <p>E dolore commodo, id anim aute sint cupidatat eu est anim tamen ad possumus,
+                        legam officia firmissimum. Eram deserunt domesticarum, iis ita praetermissum,
+                        nam aliquip quo probant, incididunt et occaecat an nam enim exquisitaque a
+                        nescius velit admodum, non ad cohaerescant, probant o nulla tempor. Aute aut te
+                        quis arbitror ubi ne aliqua consequat aliquip. Ad sunt laborum senserit, de do
+                        quem possumus. Sint tractavissent cupidatat aute possumus ita elit ad cupidatat.
+                        Arbitror ab fabulas o eu e veniam pariatur. Non voluptate comprehenderit ad nisi
+                        id voluptate. Quis distinguantur quibusdam quae mentitum o si minim illum nisi
+                        mandaremus.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="complete-dialog" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Dialog</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Fore aut non quem incididunt, varias reprehenderit deserunt quem offendit,
+                        cillum proident ne reprehenderit, quem ad laborum, quo possumus praetermissum,
+                        si ne illustriora, hic appellat coniunctione, do labore aliqua quo probant. In
+                        probant voluptatibus quo mentitum est laboris. Quorum mandaremus graviterque.
+                        Mentitum id velit, dolor aut litteris, ea varias illustriora, ita commodo ita
+                        ingeniis, iis nulla appellat incurreret, aut irure amet summis pariatur ita ubi
+                        quis dolore veniam proident, consequat sed ingeniis.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <style>
+                #dialog h2 {
+                  padding: 14px;
+                  margin: 0;
+                  font-size: 16px;
+                  font-weight: 400;
+                }
+              </style>
+            </div>
+            <div class="well page" id="shadow">
+              <h1 class="header">Shadow</h1>
+
+              <h2>Shadows</h2>
+              <div class="sample">z = 0</div>
+              <div class="sample shadow-z-1">z = 1</div>
+              <div class="sample shadow-z-2">z = 2</div>
+              <div class="sample shadow-z-3">z = 3</div>
+              <div class="sample shadow-z-4">z = 4</div>
+              <div class="sample shadow-z-5">z = 5</div>
+
+              <h2>Animated</h2>
+              <div id="shadow-sample2" data-tap="0">tap</div>
+              <div id="shadow-sample3" data-tap="0">tap</div>
+
+              <script>
+                $(document).on("click", "#shadow-sample2, #shadow-sample3", function() {
+                  var tap = ($(this).data("tap") * 1) + 1;
+                  if (tap === 6) {
+                    tap = 0;
+                  }
+                  $(this).data("tap", tap);
+                  var shadow = "shadow-z-" + tap;
+                  $(this).attr("class", shadow);
+                });
+              </script>
+
+              <style>
+                #shadow h2 {
+                  padding: 14px;
+                  margin: 0;
+                  font-size: 16px;
+                  font-weight: 400;
+                }
+                #shadow .sample {
+                  width:  100px;
+                  height: 100px;
+                  margin: 16px;
+                  padding: 16px;
+                  display: inline-block;
+                }
+                #shadow-sample2 {
+                  display: inline-block;
+                  width:  100px;
+                  height: 100px;
+                  margin: 16px;
+                  padding: 16px;
+                  cursor: pointer;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  user-select: none;
+
+                }
+                #shadow-sample3 {
+                  display: inline-block;
+                  width:  100px;
+                  height: 100px;
+                  margin: 16px;
+                  padding: 16px;
+                  border-radius: 100px;
+                  cursor: pointer;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  user-select: none;
+                }
+              </style>
+            </div>
           </div>
           <div class="col-xs-2">
             <button class="btn btn-fab btn-material-lightgrey" id="opensource"><i class="mdi-action-open-in-new"></i></button></div>
@@ -795,12 +931,16 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 
     <!-- Open source code -->
     <script>
-      window.page = "#about";
+      window.page = window.location.hash || "#about";
+
+      $(document).ready(function() {
+        if (window.page != "#about") {
+          $(".menu").find("li[data-target=" + window.page + "]").trigger("click");
+        }
+      });
 
       $(window).on("resize", function() {
         $("html, body").height($(window).height());
@@ -809,16 +949,29 @@
       }).trigger("resize");
 
       $(".menu li").click(function() {
+        // Menu
         if (!$(this).data("target")) return;
+        if ($(this).is(".active")) return;
         $(".menu li").not($(this)).removeClass("active");
-        $(this).addClass("active");
+        $(".page").not(page).removeClass("active").hide();
         window.page = $(this).data("target");
         var page = $(window.page);
-        $(".page").not(page).removeClass("active").hide();
+        window.location.hash = window.page;
+        $(this).addClass("active");
+
+
         page.show();
+
+        var totop = setInterval(function() {
+          $(".pages").animate({scrollTop:0}, 0);
+        }, 1);
+
         setTimeout(function() {
           page.addClass("active");
-        }, 50);
+          setTimeout(function() {
+            clearInterval(totop);
+          }, 1000);
+        }, 100);
       });
 
       function cleanSource(html) {

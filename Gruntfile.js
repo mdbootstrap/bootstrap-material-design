@@ -5,6 +5,10 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+
+    // Compile less to .css
+    // Compile less to .min.css
+    // Create source maps of both
     less: {
       material: {
         options: {
@@ -18,13 +22,14 @@ module.exports = function(grunt) {
           "dist/css/material.css": "less/material.less",
         }
       },
-      materialWfont: {
+      materialwfont: {
         options: {
           paths: ["less"],
           sourceMap: true,
           sourceMapRootpath: "/",
           sourceMapFilename: "dist/css/material-wfont.css.map",
-          sourceMapURL: "material-wfont.css.map"
+          sourceMapURL: "material-wfont.css.map",
+          outputSourceFiles: true
         },
         files: {
           "dist/css/material-wfont.css": "less/material-wfont.less",
@@ -36,7 +41,8 @@ module.exports = function(grunt) {
           sourceMap: true,
           sourceMapRootpath: "/",
           sourceMapFilename: "dist/css/ripples.css.map",
-          sourceMapURL: "ripples.css.map"
+          sourceMapURL: "ripples.css.map",
+          outputSourceFiles: true
         },
         files: {
           "dist/css/ripples.css": "less/ripples.less",
@@ -44,67 +50,83 @@ module.exports = function(grunt) {
       }
     },
 
-    sass: {
-      compilesass: {
-        files: {
-          "dist/css/material.css": "sass/material.scss",
-          "dist/css/material-wfont.css": "sass/material-wfont.scss",
-          "dist/css/ripples.css": "sass/ripples.scss"
-        }
-      }
-    },
-
+    // Autoprefix .css and edit its source map
+    // Autoprefix .min.css an edit its source map
     autoprefixer: {
       options: {
+        map: true,
         browsers: ["last 3 versions", "ie 8", "ie 9", "ie 10", "ie 11"]
       },
-      prefix: {
+      material: {
         files: {
           "dist/css/material.css": "dist/css/material.css",
-          "dist/css/material-wfont.css": "dist/css/material-wfont.css",
-          "dist/css/ripples.css": "dist/css/ripples.css"
+          "dist/css/material.min.css": "dist/css/material.min.css"
         }
-      }
-    },
-
-    cssmin: {
-      minifycss: {
-        expand: true,
-        cwd: "dist/css/",
-        src: ["*.css", "!*.min.css"],
-        dest: "dist/css/",
-        ext: ".min.css"
-      }
-    },
-
-    uglify: {
-      options: {
-        sourceMap: true
       },
-      minifyjs: {
+      materialwfont: {
         files: {
-          "dist/js/material.min.js": "dist/js/material.js",
-          "dist/js/ripples.min.js": "dist/js/ripples.js"
+          "dist/css/material-wfont.css": "dist/css/material-wfont.css",
+          "dist/css/material-wfont.min.css": "dist/css/material-wfont.min.css"
+        }
+      },
+      ripples: {
+        files: {
+          "dist/css/ripples.css": "dist/css/ripples.css",
+          "dist/css/ripples.min.css": "dist/css/ripples.min.css"
         }
       }
     },
 
-    copy: {
-      distjs: {
-        expand: true,
-        cwd: "scripts/",
-        src: "**.js",
-        dest: "dist/js/",
-        flatten: true,
-        filter: "isFile"
+    // Minify CSS and adapt maps
+    csswring: {
+      material: {
+        src: "dist/css/material.css",
+        dest: "dist/css/material.min.css"
       },
-      distfonts: {
+      materialwfont: {
+        src: "dist/css/material-wfont.css",
+        dest: "dist/css/material-wfont.min.css"
+      },
+      ripples: {
+        src: "dist/css/ripples.css",
+        dest: "dist/css/ripples.min.css"
+      }
+    },
+
+    // Copy .js to dist/js/ folder
+    copy: {
+      material: {
+        src: "scripts/material.js",
+        dest: "dist/js/material.js"
+      },
+      ripples: {
+        src: "scripts/ripples.js",
+        dest: "dist/js/ripples.js"
+      },
+      fonts: {
         expand: true,
         cwd: "fonts/",
         src: "**",
         dest: "dist/fonts/",
         flatten: true,
         filter: "isFile"
+      }
+    },
+
+    // Compile .js to .min.js
+    uglify: {
+      options: {
+        sourceMap: true
+      },
+      material: {
+        files: {
+          "dist/js/material.min.js": "dist/js/material.js"
+        }
+      },
+      ripples: {
+        files: {
+          "dist/js/ripples.min.js": "dist/js/ripples.js"
+        }
       }
     },
 
@@ -129,7 +151,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     jasmine: {
       scripts: "scripts/**/*.js",
       options: {
@@ -142,7 +163,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-
     jshint: {
       options: {
         jshintrc: ".jshintrc",
@@ -161,7 +181,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     watch: {
       js: {
         files: ["Gruntfile.js", "scripts/**/*.js", "template/**/*.js"],
@@ -175,10 +194,6 @@ module.exports = function(grunt) {
         files:["less/**/*.less"],
         tasks: ["default"]
       },
-      sass: {
-        files: ["sass/**/*.scss", "sass/**/*.sass"],
-        tasks: ["scss"]
-      },
       livereload: {
         options: {
           livereload: "<%= connect.options.livereload %>"
@@ -190,19 +205,46 @@ module.exports = function(grunt) {
         ]
       }
     }
-
   });
 
-  grunt.registerTask("default", ["less", "autoprefixer", "cssmin", "copy", "uglify"]);
+  grunt.registerTask("default", ["material", "ripples"]);
 
-  grunt.registerTask("scss", ["sass", "autoprefixer", "cssmin", "copy", "uglify"]);
+  grunt.registerTask("material", [
+    "material:less",
+    "material:js"
+  ]);
+  grunt.registerTask("material:less", [
+    "less:material",
+    "less:materialwfont",
+    "csswring:material",
+    "csswring:materialwfont",
+    "autoprefixer:material",
+    "autoprefixer:materialwfont"
+  ]);
+  grunt.registerTask("material:js", [
+    "copy:material",
+    "uglify:material"
+  ]);
+
+  grunt.registerTask("ripples", [
+    "ripples:less",
+    "ripples:js"
+  ]);
+  grunt.registerTask("ripples:less", [
+    "less:ripples",
+    "csswring:ripples",
+    "autoprefixer:ripples"
+  ]);
+  grunt.registerTask("ripples:js", [
+    "copy:ripples",
+    "uglify:ripples"
+  ]);
 
   grunt.registerTask("build", function(target) {
     var buildType = "default";
     if (target && target === "scss") {
       buildType = "scss";
     }
-
     grunt.task.run(["newer:jshint", "jasmine:scripts", buildType]);
   });
 
@@ -212,7 +254,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask("serve", function(target){
-    var buildTarget = "default";
+    var buildTarget = "material:less";
     if(target && target === "scss") {
       buildTarget = "scss";
     }
