@@ -31,27 +31,27 @@ social_logo_path: /assets/brand/bootstrap-social-logo.png
 social_image_path: /assets/brand/bootstrap-social.png
 
 # Custom vars
-current_version:  4.1.0
+current_version:  4.1.1
 docs_version:     4.0
 repo:             https://github.com/FezVrasta/bootstrap-material-design
 spectrum:         https://spectrum.chat/bootstrap-md
 
 download:
   source:         https://github.com/FezVrasta/bootstrap-material-design/releases
-  dist:           https://github.com/FezVrasta/bootstrap-material-design/archive/v4.1.0.zip
+  dist:           https://github.com/FezVrasta/bootstrap-material-design/archive/dist.zip
 
 blog:             https://blog.getbootstrap.com
 expo:             https://expo.getbootstrap.com
 mkp:              https://www.creative-tim.com/product/material-kit-pro?affiliate_id=87385
 mdp:              https://www.creative-tim.com/product/material-dashboard-pro?affiliate_id=87385
-mdbootstrap:      https://mdbootstrap.com/product/material-design-for-bootstrap-pro/?utm_source=7e4bff&utm_id=7e4bff
+mdbootstrap:      https://mdbootstrap.com/material-design-for-bootstrap/?utm_ref_id=26974
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
-  css:            https://unpkg.com/bootstrap-material-design@4.1.0/dist/css/bootstrap-material-design.min.css
-  css_hash:       "sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I"
-  js:             https://unpkg.com/bootstrap-material-design@4.1.0/dist/js/bootstrap-material-design.js
-  js_hash:        "sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe"
+  css:            https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css
+  css_hash:       "sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX"
+  js:             https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js
+  js_hash:        "sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
   jquery:         https://code.jquery.com/jquery-3.2.1.slim.min.js
   jquery_hash:    "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   popper:         https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js
