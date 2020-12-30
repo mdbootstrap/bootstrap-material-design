@@ -20,11 +20,8 @@ You can find the CDN of this library at [CDNJS.com](https://cdnjs.com/libraries/
 
 ### LESS & SASS
 
-We decided to merge the SASS fork in to the main repository instead of having two seperate ones, [#40](https://github.com/FezVrasta/bootstrap-material-design/issues/40). The default grunt
-task will compile the LESS source. To use the SASS base use the SCSS task ```grunt scss```.
-
-**NB** The LESS and SASS bases should reflect each other, right now this project is unstable and under heavy development
-so this might not be true before the first stable release.
+Currently only LESS is maintained, the SASS version has not a maintainer anymore (#256).
+The SASS files are in the source just because if someone wants to update the source he can use these files as base.
 
 ## Getting started
 
@@ -49,7 +46,6 @@ Run the `grunt serve` command to build and fire up a http server with live-reloa
 - [Headers](http://www.polymer-project.org/components/core-header-panel/demo.html)
 - [Icon button](http://www.polymer-project.org/components/paper-icon-button/demo.html)
 - [Tabs](http://www.polymer-project.org/components/paper-tabs/demo.html)
-- [Toggle buttons](http://www.polymer-project.org/components/paper-toggle-button/demo.html)
 
 I'll try to write every component without the need of Javascript but just CSS, and use JS only if strictly needed.
 More "todo" things can be found in the ISSUES of this repository.
