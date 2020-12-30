@@ -1,30 +1,32 @@
-The MIT License (MIT)
+Bootstrap Material Design theme
+Copyright (C) 2014+  Federico Zivolo
 
-Copyright (c) 2015-2016, Federico Zivolo and contributors - https://github.com/FezVrasta/bootstrap-material-design
+This program is free software: you can redistribute it and/or modify
+it under the terms you can find below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+You can use this software for free only for no-profit projects.
+If you'd like to use this software in a commercial project you may
+contact the author (Federico Zivolo) of the software and ask for his
+permission and fulfill his conditions.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You can edit and/or redistribute this software only providing a copy
+of this license with it.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+You cannot sell this software, any change to the software must be
+published under the same license of the original software, in case you
+don't want to publish your changes you can use a different license.
+It will be valid only if your changes are not published but
+keep private for personal projects or closed-source projects, in case
+you want to publish your changes you must switch again to the original
+license provided with the software.
 
+This software can be sold if used inside a software which uses it as
+dependency, in any case, this license must be included in the
+software.
 
-## Acknowledgements:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-- Some original Bootstrap code and documentation http://getbootstrap.com
-`Copyright (c) 2011-2015 Twitter, Inc`
-
-- Some original MDL code http://www.getmdl.io/
-`Copyright 2015 Google Inc. All Rights Reserved.`
+This license could be edited in any moment without alert.
