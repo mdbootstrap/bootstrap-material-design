@@ -22,17 +22,30 @@ module.exports = function(grunt) {
           "dist/css/material.css": "less/material.less",
         }
       },
-      materialwfont: {
+      materialfullpalette: {
         options: {
           paths: ["less"],
           sourceMap: true,
           sourceMapRootpath: "/",
-          sourceMapFilename: "dist/css/material-wfont.css.map",
-          sourceMapURL: "material-wfont.css.map",
+          sourceMapFilename: "dist/css/material-fullpalette.css.map",
+          sourceMapURL: "material-fullpalette.css.map",
           outputSourceFiles: true
         },
         files: {
-          "dist/css/material-wfont.css": "less/material-wfont.less",
+          "dist/css/material-fullpalette.css": "less/material-fullpalette.less",
+        }
+      },
+      roboto: {
+        options: {
+          paths: ["less"],
+          sourceMap: true,
+          sourceMapRootpath: "/",
+          sourceMapFilename: "dist/css/roboto.css.map",
+          sourceMapURL: "roboto.css.map",
+          outputSourceFiles: true
+        },
+        files: {
+          "dist/css/roboto.css": "less/roboto.less",
         }
       },
       ripples: {
@@ -63,10 +76,16 @@ module.exports = function(grunt) {
           "dist/css/material.min.css": "dist/css/material.min.css"
         }
       },
-      materialwfont: {
+      materialfullpalette: {
         files: {
-          "dist/css/material-wfont.css": "dist/css/material-wfont.css",
-          "dist/css/material-wfont.min.css": "dist/css/material-wfont.min.css"
+          "dist/css/material-fullpalette.css": "dist/css/material-fullpalette.css",
+          "dist/css/material-fullpalette.min.css": "dist/css/material-fullpalette.min.css"
+        }
+      },
+      roboto: {
+        files: {
+          "dist/css/roboto.css": "dist/css/roboto.css",
+          "dist/css/roboto.min.css": "dist/css/roboto.min.css"
         }
       },
       ripples: {
@@ -83,9 +102,13 @@ module.exports = function(grunt) {
         src: "dist/css/material.css",
         dest: "dist/css/material.min.css"
       },
-      materialwfont: {
-        src: "dist/css/material-wfont.css",
-        dest: "dist/css/material-wfont.min.css"
+      materialfullpalette: {
+        src: "dist/css/material-fullpalette.css",
+        dest: "dist/css/material-fullpalette.min.css"
+      },
+      roboto: {
+        src: "dist/css/roboto.css",
+        dest: "dist/css/roboto.min.css"
       },
       ripples: {
         src: "dist/css/ripples.css",
@@ -192,7 +215,7 @@ module.exports = function(grunt) {
       },
       less: {
         files:["less/**/*.less"],
-        tasks: ["default"]
+        tasks: ["material:less"]
       },
       livereload: {
         options: {
@@ -201,7 +224,7 @@ module.exports = function(grunt) {
         files: [
           "index.html",
           "dist/css/**/*.css",
-          "**/*.{png,jpg,jpeg,gif,webp,svg}"
+          "demo/**/*.{png,jpg,jpeg,gif,webp,svg}"
         ]
       }
     },
@@ -243,11 +266,14 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask("material:less", [
     "less:material",
-    "less:materialwfont",
+    "less:materialfullpalette",
+    "less:roboto",
     "csswring:material",
-    "csswring:materialwfont",
+    "csswring:materialfullpalette",
+    "csswring:roboto",
     "autoprefixer:material",
-    "autoprefixer:materialwfont"
+    "autoprefixer:materialfullpalette",
+    "autoprefixer:roboto"
   ]);
   grunt.registerTask("material:js", [
     "copy:material",
@@ -268,12 +294,8 @@ module.exports = function(grunt) {
     "uglify:ripples"
   ]);
 
-  grunt.registerTask("build", function(target) {
-    var buildType = "default";
-    if (target && target === "scss") {
-      buildType = "scss";
-    }
-    grunt.task.run(["newer:jshint", "jasmine:scripts", buildType]);
+  grunt.registerTask("build", function() {
+    grunt.task.run(["newer:jshint", "default"]);
   });
 
   grunt.registerTask("test", [
@@ -298,6 +320,6 @@ module.exports = function(grunt) {
   grunt.registerTask("meteor-publish", ["exec:meteor-init", "exec:meteor-publish", "exec:meteor-cleanup"]);
   grunt.registerTask("meteor", ["exec:meteor-init", "exec:meteor-test", "exec:meteor-publish", "exec:meteor-cleanup"]);
 
-  grunt.registerTask("cibuild", ["newer:jshint", "jasmine:scripts", "meteor-test"]);
+  grunt.registerTask("cibuild", ["newer:jshint", "meteor-test"]);
 
 };
