@@ -1,11 +1,12 @@
-# bootstrap-material-design
+[![banner](demo/imgs/banner.jpg)](#)
 
 [![build status](https://travis-ci.org/FezVrasta/bootstrap-material-design.svg?branch=master)](https://travis-ci.org/FezVrasta/bootstrap-material-design)
 [![gratipay](https://img.shields.io/gratipay/FezVrasta.svg)](https://gratipay.com/FezVrasta)
 [![Bower version](https://badge.fury.io/bo/bootstrap-material-design.svg)](https://github.com/FezVrasta/bootstrap-material-design)
 
-[![banner](demo/imgs/banner.jpg)](#)
 
+
+## About
 Material Design for Bootstrap is a Bootstrap V3 compatible theme; it is an easy way to use the new [Material Design guidelines by Google](http://www.google.com/design/spec/material-design/introduction.html) in your Bootstrap 3 based application.
 Just include the theme, after the Bootstrap CSS and include the JavaScript at the end of your document (just before the `</body>` tag), and everything will be converted to Material Design (Paper) style.
 
@@ -28,11 +29,10 @@ Major differences:
 
 ## How to install
 
-You may install this theme using NPM, Bower or Meteor:
+You may install this theme using NPM or Bower:
 
 - NPM : `npm install bootstrap-material-design`
 - Bower : `bower install bootstrap-material-design`
-- Meteor: `meteor add fezvrasta:bootstrap-material-design`
 
 If you prefer, you can include this framework in your project using our official CDN:
 
@@ -78,7 +78,7 @@ If you like this project you may support it by donating via Gittip, starring thi
 ## Development
 
 We are using Grunt to automate the workflow and build process. Ensure you have nodejs installed and grunt-cli installed globally.
-After cloning the repo, run `npm install` to ensure you have all dev dependencies.
+After cloning the repo, run `npm install && bower install` to ensure you have all dev dependencies.
 
 ### Grunt
 
@@ -105,13 +105,13 @@ styles for bootstrap based markup to comply with Material Design concepts.
 
 There are 17 color variations (in addition to the classic 4 variations) described by the Material Design color palette:
 
-![palette](docs/assets/img/material-design-color-palette.jpg)
+![palette](material-design-color-palette.jpg)
 
 ##### Compile your customized distributable
 
 If you are using the static css files, you may want to use your own color variation.  To do so:
 
-1. Download the source or obtain the source with bower
+1. `npm install && bower install` (alternatively you may download the source, but using npm and bower is recommended)
 2. Edit the `less/_variables.less` file and alter the color variables.  You are most likely interested in altering `@brand-primary`.  For a list of material design color palette variables, refer to `less/_colors.less`
 
     ```less
