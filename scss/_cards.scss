@@ -13,6 +13,7 @@
   // Top and bottom padding: 16dp
   .card-header {
     padding: 1rem;
+    background-color: transparent;
   }
 
   .card-block {
@@ -37,8 +38,11 @@
     }
   }
 
-  .bmd-card-actions, // needed?  if you have actions in the middle of the card (see spec), it may be necessary
-  .card-footer { // assume footer is the set of actions?
+  .bmd-card-actions,
+  // needed?  if you have actions in the middle of the card (see spec),
+  it may be necessary
+  .card-footer {
+    // assume footer is the set of actions?
     padding: .5rem;
   }
 
@@ -54,5 +58,3 @@
     }
   }
 }
-
-
